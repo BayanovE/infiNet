@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Ymap from "./components/Ymap";
+import RouteList from "./components/RouteList";
+import YSuggest from "./components/YSuggest";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <div className="wrapper">
+                <div className="layout">
+                    <div className="layout__main">
+                        <Ymap height="100%" />
+                        <div className="search">
+                            <YSuggest />
+                        </div>
+                    </div>
+                    <div className="layout__sidebar">
+                        <RouteList />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
